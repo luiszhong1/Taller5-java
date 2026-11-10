@@ -15,12 +15,12 @@ public class Ejercicio1 {
 
     public static double calcularPropina(double monto, double porcentaje) {
         // TODO: retornar la propina = monto * porcentaje / 100
-        return 0.0;
+        return monto * porcentaje / 100;
     }
 
     public static double calcularTotal(double monto, double porcentaje) {
         // TODO: retornar monto + propina
-        return 0.0;
+        return monto + calcularPropina(monto, porcentaje);
     }
 
     public static void main(String[] args) {
