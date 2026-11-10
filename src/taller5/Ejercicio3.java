@@ -1,31 +1,44 @@
 package taller5;
 
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
-/**
- * Ejercicio 3 - Área y perímetro de un rectángulo (JOptionPane)
- *
- * El autograde invoca por reflexión:
- *   calcularArea(double base, double altura)
- *   calcularPerimetro(double base, double altura)
- */
 public class Ejercicio3 {
 
     public static double calcularArea(double base, double altura) {
-        // TODO: retornar base * altura
-        return 0.0;
+        return base * altura;
     }
 
     public static double calcularPerimetro(double base, double altura) {
-        // TODO: retornar 2 * (base + altura)
-        return 0.0;
+        return 2 * (base + altura);
     }
 
     public static void main(String[] args) {
-        // TODO:
-        // 1. Pedir base y altura con JOptionPane.showInputDialog
-        // 2. Mostrar con JOptionPane.showMessageDialog EXACTO:
-        //      Área: X.XX
-        //      Perímetro: Y.YY
+        String entradaBase = JOptionPane.showInputDialog(
+                null, "Ingresa la base del rectángulo:");
+        if (entradaBase == null) {
+            return;
+        }
+
+        String entradaAltura = JOptionPane.showInputDialog(
+                null, "Ingresa la altura del rectángulo:");
+        if (entradaAltura == null) {
+            return;
+        }
+
+        double base = Double.parseDouble(entradaBase);
+        double altura = Double.parseDouble(entradaAltura);
+
+        double area = calcularArea(base, altura);
+        double perimetro = calcularPerimetro(base, altura);
+
+        String resultado = String.format(
+                Locale.US,
+                "Área: %.2f%nPerímetro: %.2f",
+                area,
+                perimetro
+        );
+
+        JOptionPane.showMessageDialog(null, resultado);
     }
 }
